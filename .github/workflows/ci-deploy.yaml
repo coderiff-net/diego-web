@@ -31,6 +31,8 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build site
+        env:
+          PUBLIC_FORMSUBMIT_TOKEN: ${{ vars.PUBLIC_FORMSUBMIT_TOKEN }}
         run: npm run build
 
       - name: Upload Pages artifact

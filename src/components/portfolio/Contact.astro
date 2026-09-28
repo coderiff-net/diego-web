@@ -1,0 +1,17 @@
+<section id="contact" class="scroll-mt-28 px-6 py-24 sm:px-10 lg:px-12">
+  <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[.22em] text-emerald-400">Contact</p>
+      <h2 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Have a challenge in mind?</h2>
+      <p class="mt-5 max-w-md leading-8 text-zinc-400">Tell me what you're building, where you're stuck, or how I can help. I'll get back to you.</p>
+    </div>
+    <form action="https://formsubmit.co/diego.martin@coderiff.tech" method="POST" class="space-y-5">
+      <input type="hidden" name="_subject" value="New message from Coderiff" />
+      <input type="hidden" name="_captcha" value="false" />
+      <div><label for="contact-name" class="mb-2 block text-sm font-medium text-zinc-200">Full name</label><input id="contact-name" name="name" autocomplete="name" required class="w-full rounded-xl border border-white/15 bg-white/[.04] px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-emerald-400" placeholder="Your name" /></div>
+      <div><label for="contact-email" class="mb-2 block text-sm font-medium text-zinc-200">Email</label><input id="contact-email" type="email" name="email" autocomplete="email" required class="w-full rounded-xl border border-white/15 bg-white/[.04] px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-emerald-400" placeholder="you@example.com" /></div>
+      <div><label for="contact-message" class="mb-2 block text-sm font-medium text-zinc-200">How can I help?</label><textarea id="contact-message" name="message" rows="5" required class="w-full resize-y rounded-xl border border-white/15 bg-white/[.04] px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-emerald-400" placeholder="Tell me a little about it..."></textarea></div>
+      <button type="submit" class="rounded-full bg-emerald-400 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-300">Send message</button>
+    </form>
+  </div>
+</section>

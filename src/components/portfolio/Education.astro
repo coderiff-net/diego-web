@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+const degrees = [
+  {
+    title: "Master's Degree in Computer Science",
+    institution: "University of the Basque Country (UPV-EHU)",
+    years: "2002 - 2006",
+  },
+  {
+    title: "Master's in Education",
+    institution: "Camilo Jose Cela University (UCJC)",
+    years: "2020 - 2021",
+  },
+];
+---
+
+<section id="education" class="scroll-mt-28 border-y border-white/10 bg-black/[.025] px-6 py-24 dark:bg-white/[.025] sm:px-10 lg:px-12">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-sm font-semibold uppercase tracking-[.22em] text-emerald-400">Education & lifelong learning</p>
+    <div class="mt-4 grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-16">
+      <div>
+        <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">A lasting interest in how people learn.</h2>
+        <p class="mt-5 leading-8 text-zinc-400">Alongside engineering, I'm interested in education. I enjoy mentoring, sharing knowledge, and making complex ideas easier to understand, an interest that shapes how I lead and collaborate with teams.</p>
+      </div>
+      <div class="space-y-4">
+        {degrees.map((degree) => (
+          <article class="rounded-2xl border border-white/10 bg-white/[.035] p-5 sm:p-6">
+            <div class="flex items-start gap-4">
+              <span class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+                <Icon name="graduation-cap" class="size-6" aria-hidden="true" />
+              </span>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-semibold text-white">{degree.title}</h3>
+                  <p class="text-sm font-medium text-emerald-400">{degree.years}</p>
+                </div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">{degree.institution}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

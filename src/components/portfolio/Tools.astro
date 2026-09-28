@@ -1,0 +1,19 @@
+---
+const groups = [
+  { title: "Architecture & Modeling", items: ["Event Sourcing", "CQRS", "Event-Driven Architecture", "Domain-Driven Design", "Event Modeling", "Event Storming", "Microservices", "Team Topologies", "REST"] },
+  { title: "Development", items: [".NET", "C#", "ASP.NET", "TypeScript", "JavaScript", "Vue.js", "Tailwind", "SQL", "MongoDB", "KurrentDB", "AI"] },
+  { title: "Cloud & delivery", items: ["AWS", "Azure", "Pulumi", "Cloudflare", "CI/CD", "DevOps", "Git", "Automated Testing", "TDD / BDD"] },
+];
+---
+
+<section id="stack" class="scroll-mt-28 border-y border-white/10 bg-white/[.025] px-6 py-24 sm:px-10 lg:px-12">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-sm font-semibold uppercase tracking-[.22em] text-emerald-400">How I work</p>
+    <div class="mt-4 grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+      <div><h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">A toolkit for the whole system.</h2><p class="mt-5 leading-8 text-zinc-400">I connect product thinking, software architecture, cloud infrastructure, and team practices to help systems stay useful as they grow.</p></div>
+      <div class="space-y-8">
+        {groups.map((group) => <div><h3 class="mb-4 text-sm font-semibold uppercase tracking-[.16em] text-zinc-400">{group.title}</h3><ul class="flex flex-wrap gap-2.5">{group.items.map((item) => <li class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm text-zinc-200">{item}</li>)}</ul></div>)}
+      </div>
+    </div>
+  </div>
+</section>

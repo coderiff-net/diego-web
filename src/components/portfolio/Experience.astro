@@ -1,0 +1,28 @@
+---
+const experience = [
+  { period: "May 2024 - Present", role: "Lead Software Engineer", company: "Vitesse - London", detail: "Driving technical vision and delivery within an agile squad, designing and building payment solutions that help clients move money seamlessly." },
+  { period: "Feb 2021 - May 2024", role: "Technical Product Lead", company: "Rubiko Tech SL - Barcelona", detail: "Led a senior full-stack team building a multi-tenant customer service SaaS. Owned product direction and delivery, and introduced event-driven architecture, CI/CD, and infrastructure as code with Pulumi and AWS." },
+  { period: "Jan 2020 - Feb 2021", role: "Independent Contractor Software Engineer", company: "Coderiff - Malaga", detail: "Founded Coderiff to deliver software and team training. Guided teams in .NET and TypeScript, domain-driven design, CQRS, event sourcing, testing, and CI/CD." },
+  { period: "Apr 2018 - Jan 2020", role: "Domain Architect", company: "TUI Group - Malaga", detail: "Designed distributed microservices for a major tour operator. Shaped booking, customer basket, sales order, and cross-selling capabilities with domain-driven design and event sourcing; facilitated event storming and mentored a 16-person engineering group." },
+  { period: "Feb 2017 - Apr 2018", role: "Technical Lead", company: "Ciklum - Malaga", detail: "Led a five-developer team delivering a multi-tenant platform with microservices, event-driven architecture, event sourcing, and CQRS." },
+  { period: "2011 - 2017", role: "Full Stack Developer", company: "SpeEDI, Datacom, Focus Group & Propellerhead - New Zealand", detail: "Built full-stack web products and REST APIs, led delivery in a startup team, and integrated business systems including Xero and Power BI." },
+  { period: "2008 - 2011", role: "Software Developer & Support Specialist", company: "Siemens Solutions & Services - Ireland", detail: "Growing as a professional in an international environment." },
+  { period: "2006 - 2008", role: "Junior Software Developer", company: "Telefonica I+D - Spain", detail: "Started my software career in product development" },
+];
+---
+
+<section id="experience" class="scroll-mt-28 px-6 py-24 sm:px-10 lg:px-12">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-sm font-semibold uppercase tracking-[.22em] text-emerald-400">Career</p>
+    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Experience that compounds.</h2>
+    <p class="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">From hands-on development to technical leadership, I've spent two decades helping teams deliver complex software with confidence.</p>
+    <div class="mt-14 divide-y divide-white/10 border-y border-white/10">
+      {experience.map((item) => (
+        <article class="grid gap-3 py-7 sm:grid-cols-[190px_1fr] sm:gap-10">
+          <p class="text-sm font-medium text-emerald-300">{item.period}</p>
+          <div><h3 class="text-xl font-semibold text-white">{item.role}</h3><p class="mt-1 text-sm text-zinc-400">{item.company}</p><p class="mt-4 max-w-3xl leading-7 text-zinc-300">{item.detail}</p></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

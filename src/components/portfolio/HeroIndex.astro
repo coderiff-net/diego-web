@@ -1,0 +1,50 @@
+---
+import { existsSync } from "node:fs";
+import { Icon } from "astro-icon/components";
+
+const portraitExists = existsSync("public/images/diego-pic.jpg");
+const highlights = [
+  { icon: "briefcase", title: "20 years in delivery", detail: "From hands-on engineering to technical leadership." },
+  { icon: "dashboard", title: "Problem to product", detail: "Analysis, product vision, event modeling, and system design." },
+  { icon: "person", title: "Teams aligned to outcomes", detail: "Clear direction, sound architecture, and confident delivery." },
+];
+---
+
+<section id="home" class="relative isolate overflow-hidden px-6 pb-16 pt-14 sm:px-10 sm:pt-20 lg:px-12 lg:pb-20">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_70%_5%,rgba(16,185,129,.17),transparent_45%)]"></div>
+  <div class="mx-auto max-w-6xl">
+    <p class="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.16em] text-emerald-400 sm:text-sm"><span class="h-px w-10 bg-emerald-400"></span>Product vision · Software architecture · Team leadership</p>
+    <div class="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-14">
+      <div>
+        <h1 class="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-[-.055em] text-white sm:text-6xl lg:text-7xl">Turn complex problems into <span class="text-emerald-400">clear digital direction.</span></h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">I help businesses understand what needs to change, shape product vision, and design information systems that solve real problems. I connect analysis and event modeling to software architecture, then lead teams from direction through delivery.</p>
+        <p class="mt-4 text-sm font-medium tracking-wide text-zinc-400">Diego Martin <span class="px-1 text-emerald-400">/</span> Lead Software Engineer <span class="px-1 text-emerald-400">/</span> Malaga, Spain</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#contact" class="rounded-full bg-emerald-400 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-300">Let's talk</a>
+          <a href="https://coderiff.net/blog/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-emerald-400 hover:text-emerald-300">Read my writing</a>
+        </div>
+      </div>
+      <div class="mx-auto mt-2 flex size-40 items-center justify-center overflow-hidden rounded-full border border-emerald-400/35 bg-emerald-400/5 shadow-[0_12px_48px_rgba(16,185,129,.18)] ring-4 ring-emerald-400/10 sm:size-48 lg:mt-4 lg:size-56">
+        {portraitExists ? (
+          <img src="/images/diego-pic.jpg" alt="Portrait of Diego Martin" class="h-full w-full object-cover object-center" />
+        ) : (
+          <div class="flex flex-col items-center gap-3 text-emerald-500 dark:text-emerald-300" role="img" aria-label="Portrait placeholder for Diego Martin">
+            <Icon name="person" class="size-14 sm:size-16" aria-hidden="true" />
+            <span class="text-xs font-semibold uppercase tracking-[.18em]">Photo coming soon</span>
+          </div>
+        )}
+      </div>
+    </div>
+    <div class="mt-14 grid gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">
+      {highlights.map((item) => (
+        <article class="rounded-2xl border border-white/10 bg-black/[.025] p-4 dark:bg-white/[.035] sm:p-5">
+          <div class="mb-4 flex size-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+            <Icon name={item.icon} class="size-5" aria-hidden="true" />
+          </div>
+          <h2 class="text-base font-semibold text-white">{item.title}</h2>
+          <p class="mt-1.5 text-sm leading-5 text-zinc-400">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+{
+  "staticData": {
+    "profileImage": "/images/diego-martin.webp",
+    "profileAlt": "Portrait of Diego Martin",
+    "profileLink": "/",
+    "profileTitle": "Lead Software Engineer",
+    "profileName": "Diego Martin",
+    "github": "https://github.com/diegosasw",
+    "githubText": "Explore my GitHub",
+    "portfolioImage": "/images/diego-martin.webp",
+    "linkedin": "https://www.linkedin.com/in/diego-coderiff",
+    "instagram": "https://coderiff.net/blog/",
+    "youtube": "https://coderiff.net/blog/",
+    "alias": "Diego Martin",
+    "contactSectionTitle": "Have a challenge in mind?",
+    "contactSectionSubtitle": "Let's talk.",
+    "contactSectionButtonText": "Send a message",
+    "contactSectionButtonIcon": "paperplane",
+    "techsTitle": "TECH STACK",
+    "instagramIconName": "code",
+    "youtubeIconName": "code",
+    "githubIconName": "github",
+    "linkedinIconName": "linkedin",
+    "hobbies": ["Software architecture", "Engineering leadership", "Product thinking"],
+    "pageTitle": "Diego Martin | Lead Software Engineer",
+    "pageDescription": "Lead Software Engineer in Málaga, Spain. Building resilient systems and helping teams deliver complex software.",
+    "OGImage": {
+      "url": "/images/imagedefault.webp",
+      "alt": "Diego Martin, Lead Software Engineer in Málaga, Spain"
+    }
+  }
+}

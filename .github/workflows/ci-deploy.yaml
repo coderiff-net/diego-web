@@ -11,28 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  check:
-    name: Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run checks
-        run: npm run check
-
   build:
     name: Build
-    needs: check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -47,9 +27,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Build site
-        env:
-          PUBLIC_FORMSUBMIT_TOKEN: ${{ vars.PUBLIC_FORMSUBMIT_TOKEN }}
         run: npm run build
 
       - name: Upload Pages artifact

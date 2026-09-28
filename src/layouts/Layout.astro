@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import  SpeedInsights  from "@vercel/speed-insights/astro"
 const {
   pageTitle = "Diego Martin | Lead Software Engineer",
   description = "Diego Martin is a Lead Software Engineer in Málaga, Spain, with 20 years of experience in software architecture and engineering leadership.",
@@ -12,17 +11,11 @@ const {
   },
 } = Astro.props;
 
-const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "Diego Martin",
-  url: siteUrl,
-  locale: "en_US",
   author: "Diego Martin",
-  twitter: "",
 };
 
-
-const twitterimage = `${siteUrl}${ogimage.url}`;
+const twitterimage = new URL(ogimage.url, Astro.site).href;
 ---
 
 <html
@@ -48,10 +41,8 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogimage.url} />
     <meta property="og:image:alt" content={ogimage.alt} />
-    <meta property="og:url" content={SEO.url} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={SEO.sitename} />
-    <meta property="og:locale" content={SEO.locale} />
     
 
     <!-- Twitter Cards -->
@@ -60,7 +51,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={twitterimage} />
     <meta name="twitter:image:alt" content={ogimage.alt} />
-    <meta name="twitter:site" content={SEO.twitter} />
   
     <meta name="theme-color" content="#0E0E11"/>
 
@@ -69,7 +59,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     
   </head>
   <body class="overflow-x-hidden">
-    <SpeedInsights/>
     <div class="blur-circle"></div>
     <div
       style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"

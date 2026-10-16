@@ -25,6 +25,13 @@ const twitterimage = new URL(ogimage.url, Astro.site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNQJWXKRMV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-WNQJWXKRMV');
+    </script>
     <title>{pageTitle}</title>
     <!-- Favicon for different platforms -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
